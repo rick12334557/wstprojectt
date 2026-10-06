@@ -1,0 +1,543 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #fffaf7;
+    color: #292929;
+    line-height: 1.7;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 7%;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #eee;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.navbar h2 {
+    color: #b91c2c;
+    font-size: 1.35rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #c81e32;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #c81e32;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 80px 20px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(20, 20, 35, 0.55),
+            rgba(20, 20, 35, 0.65)
+        ),
+        url("assets/308e06f2-de34-4b08-ac49-21476985ac4d.jpg")
+        center / cover no-repeat;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: rgba(190, 25, 45, 0.85);
+
+    top: -100px;
+    right: -80px;
+
+    opacity: 0.7;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+    color: white;
+
+    animation: fadeUp 1s ease;
+}
+
+.small-title {
+    color: #f5b8bd;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1.05;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.hero-content > p:not(.small-title) {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    font-size: 1.15rem;
+    color: #f5f5f5;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background: #c81e32;
+    color: white;
+
+    text-decoration: none;
+    font-weight: 700;
+
+    border-radius: 5px;
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 8px 20px rgba(160, 20, 40, 0.3);
+}
+
+.btn:hover {
+    background: #9f1728;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(160, 20, 40, 0.4);
+}
+
+.intro {
+    max-width: 900px;
+    margin: auto;
+    padding: 90px 25px 70px;
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 2.4rem;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.intro h2::after {
+    content: "";
+    display: block;
+
+    width: 60px;
+    height: 3px;
+
+    background: #c81e32;
+
+    margin: 15px auto;
+}
+
+.intro p {
+    color: #666;
+    font-size: 1.05rem;
+}
+
+.culture {
+    padding: 90px 7%;
+    background: #f8f4f1;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title p {
+    color: #c81e32;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.section-title h2 {
+    font-size: 3rem;
+    margin-top: 8px;
+    color: #222;
+}
+
+.culture-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 28px;
+
+    border-radius: 12px;
+
+    border: 1px solid #eee;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: #9f1728;
+    font-size: 1.35rem;
+    margin-bottom: 18px;
+}
+
+.card img {
+    display: block;
+
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.03);
+}
+
+.card p {
+    color: #666;
+    font-size: 0.97rem;
+}
+
+.traditions {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 90px 8%;
+
+    position: relative;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 20, 30, 0.92),
+            rgba(20, 20, 30, 0.55)
+        ),
+        url("assets/18762f22-43b4-47ff-94fa-c432eb914e1e.jpg")
+        center / cover no-repeat;
+}
+
+.tradition-content {
+    max-width: 650px;
+}
+
+.tradition-content .small-title {
+    color: #f0a5ad;
+}
+
+.tradition-content h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.tradition-content > p:not(.small-title) {
+    color: #e4e4e4;
+    font-size: 1.05rem;
+    margin-bottom: 35px;
+}
+
+.tradition-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tradition-list span {
+    padding: 10px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(5px);
+
+    font-size: 0.9rem;
+
+    transition: 0.3s ease;
+}
+
+.tradition-list span:hover {
+    background: #c81e32;
+    border-color: #c81e32;
+    transform: translateY(-3px);
+}
+
+.about {
+    padding: 90px 25px;
+
+    text-align: center;
+
+    background: #fff;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.about p {
+    max-width: 750px;
+    margin: auto;
+
+    color: #666;
+    font-size: 1.05rem;
+}
+
+footer {
+    text-align: center;
+
+    padding: 50px 20px;
+
+    background: #17171c;
+    color: white;
+}
+
+footer h3 {
+    color: #f3a1a8;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+footer p {
+    color: #aaa;
+}
+
+footer .copyright {
+    margin-top: 20px;
+    padding-top: 20px;
+
+    border-top: 1px solid #333;
+
+    font-size: 0.85rem;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 16px 5%;
+    }
+
+    .navbar ul {
+        gap: 18px;
+    }
+
+    .culture {
+        padding: 70px 5%;
+    }
+
+    .culture-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 80vh;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 20px;
+    }
+
+    .navbar h2 {
+        font-size: 1.2rem;
+    }
+
+    .navbar ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        min-height: 80vh;
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content > p:not(.small-title) {
+        font-size: 1rem;
+    }
+
+    .intro {
+        padding: 65px 20px;
+    }
+
+    .intro h2 {
+        font-size: 2rem;
+    }
+
+    .culture {
+        padding: 65px 20px;
+    }
+
+    .section-title h2 {
+        font-size: 2.3rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card img {
+        height: 220px;
+    }
+
+    .traditions {
+        min-height: 550px;
+        padding: 70px 25px;
+    }
+
+    .tradition-content h2 {
+        font-size: 2.7rem;
+    }
+
+    .tradition-list {
+        gap: 8px;
+    }
+
+    .tradition-list span {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .about {
+        padding: 65px 20px;
+    }
+
+    .about h2 {
+        font-size: 2rem;
+    }
+}
+
+a:focus-visible {
+    outline: 3px solid #e56b78;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
